@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  get '/users' => 'users#index'
+  get '/users/:id/edit' => 'users#edit', as: 'edit_user'
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
+  # get '/user/:id' => 'users#show', as: 'user'
+
+  root :to => 'map#index'
+  get '/state/:state' => 'map#state'
+  # get 'users/:id/interests' => 'users#interests', as: 'interests'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
