@@ -15,3 +15,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+setup.sh
+# Ignore application configuration
+/config/application.yml
+
+# Ignore coverage reports
+coverage
