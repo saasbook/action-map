@@ -14,13 +14,34 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      root_path
+
+    when /^the map page/
+      root_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
+
+    when /^the interests page for "(.*)"/
+      edit_user_path(User.find_by_uid($1))
+
+    when /^the new account page/
+      new_user_path
+
+    when /^the login page/
+      login_user_path
+
+    when /^the new person page/
+      new_person_path
+      
+    when /^the events page/
+      events_path
+    
+    when /^the add events page/
+      new_event_path
 
     else
       begin
