@@ -1,0 +1,157 @@
+// Place all the styles related to the map controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#Map_of_the_counties_of_California_without_legend{
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+#map {
+  display: block;
+  margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    top: 0;
+}
+
+/* Links inside the navbar */
+ul a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+li {
+    border-right: 1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+path:hover, polyline:hover, polygon:hover {
+  stroke: #0022868 !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #002868 !important;
+  cursor: pointer;
+}
+
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #BF0A30;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+.active {
+  fill: #005073;
+}
+.semi-active {
+  fill: #107dac;
+}
+.neutral {
+  fill: #189ad3;
+}
+.semi-inactive {
+  fill: #1ebbd7;
+}
+.inactive{
+  fill: #71c7ec;
+}
+
+
+.i_active {
+  fill: #005073;
+}
+.i_semi-active {
+  fill: #107dac;
+}
+.i_neutral {
+  fill: #189ad3;
+}
+.i_semi-inactive {
+  fill: #1ebbd7;
+}
+.i_inactive{
+  fill: #71c7ec;
+}
+
+
+.gc_active {
+  fill: #009900;
+}
+.gc_semi-active {
+  fill: #00cc00;
+}
+.gc_neutral {
+  fill: #33ff33;
+}
+.gc_semi-inactive {
+  fill: #99ff99;
+}
+.gc_inactive{
+  fill: #ccffcc;
+}
+
+
+.e_active {
+  fill: #6600cc;
+}
+.e_semi-active {
+  fill: #7f00ff;
+}
+.e_neutral {
+  fill: #9933ff;
+}
+.e_semi-inactive {
+  fill: #b266ff;
+}
+.e_inactive{
+  fill: #E5CCFF;
+}

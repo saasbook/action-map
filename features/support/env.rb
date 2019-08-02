@@ -4,6 +4,9 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'simplecov'
+SimpleCov.start
+
 require 'cucumber/rails'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
@@ -34,6 +37,24 @@ begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+# Used for logging in as a user through omniauth.
+Before('@omniauth_test') do
+  OmniAuth.config.test_mode = true
+  Capybara.default_host = 'http://example.com'
+
+  # This currently doesn't work.
+#   OmniAuth.config.add_mock(:google, {
+#     :uid => '1234',
+#     :info => {
+# 	    :name => 'Example User',
+# 	}
+#   })
+end
+
+After('@omniauth_test') do
+  OmniAuth.config.test_mode = false
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
