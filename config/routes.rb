@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+
+  get '/users' => 'users#index'
+  post '/user/:id/edit' => 'users#edit', as: 'edit_user'
+  get '/user/:id' => 'users#show', as: 'user'
+
+  get 'admin/map' => 'admin#map'
+  post 'admin/update_activity' => 'admin#update_activity'
+
+  root :to => 'map#index'
+  get '/state/:state' => 'map#state', as: 'state_map'
+
+  get "/login", to: redirect("/auth/google_oauth2")
+
+  get "/auth/google_oauth2/callback", to: "sessions#create"
+
+  get "/logout", to: "sessions#destroy"
+  get "/admin/person/new" => "persons#new", as: 'new_person'
+  post "/admin/person" => "persons#create", as: 'create_person'
+  get "/admin/person/:id" => "persons#edit", as: 'edit_person'
+  get "/person/:id" => "persons#show", as: 'person'
+  get "/persons" => "persons#index", as: 'persons'
+
+  get '/events', to: 'events#index'
+  post '/events', to: 'events#create'
+  get '/events/new', to: 'events#new', as: 'new_event'
+  get '/events/delete/:id', to: 'events#destroy', as: 'delete_event'
+
+
+  # get 'users/:id/interests' => 'users#interests', as: 'interests'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

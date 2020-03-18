@@ -26,6 +26,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'haml'
+gem 'figaro'
+gem "omniauth", '~> 1.7.1'
+gem "omniauth-google-oauth2", '~> 0.5.2'
+
+gem "config"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,10 +57,11 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '2.14'
+  gem 'rspec-rails', '3.4.2'
   gem 'simplecov', :require => false
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem "factory_bot_rails", '~> 4.8.2'
   gem 'database_cleaner'
   gem 'autotest-rails'
   gem 'metric_fu'
